@@ -1,0 +1,552 @@
+11:00:21 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:822:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:822:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:822:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:822:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:822:58: warning: '%.2f' directive writing between 3 and 313 bytes into a region of size 0 [-Wformat-overflow=]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                                                          ^~~~
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:822:5: note: 'sprintf' output between 75 and 1005 bytes into a destination of size 35
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 100732	    924	  25684	 127340	  1f16c	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+11:00:28 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 100732	    924	  25684	 127340	  1f16c	drone.elf
+Finished building: default.size.stdout
+ 
+11:02:55 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:822:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:822:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:822:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:822:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:822:58: warning: '%.2f' directive writing between 3 and 313 bytes into a region of size 0 [-Wformat-overflow=]
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                                                          ^~~~
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:822:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:822:5: note: 'sprintf' output between 75 and 1005 bytes into a destination of size 35
+  822 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 100732	    924	  25684	 127340	  1f16c	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+11:20:10 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:826:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:826:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:826:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:826:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:831:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:831:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:831:13: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |             ^~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t {aka unsigned char}
+../Core/Src/main.c:831:13: note: expected 'char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c:832:32: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  832 |     HAL_UART_Transmit(&huart3, MSG_LSM6DSL_Acc, sizeof(MSG_LSM6DSL_Acc), 100);
+      |                                ^~~~~~~~~~~~~~~
+      |                                |
+      |                                uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:836:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:836:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:836:13: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |             ^~~~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t {aka unsigned char}
+../Core/Src/main.c:836:13: note: expected 'char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c:837:32: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  837 |     HAL_UART_Transmit(&huart3, MSG_LSM303AGR_Acc, sizeof(MSG_LSM303AGR_Acc), 100);
+      |                                ^~~~~~~~~~~~~~~~~
+      |                                |
+      |                                uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:845:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~
+../Core/Src/main.c:845:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:845:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |               ^~~~~~~~~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:845:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:852:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:852:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:852:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |             ^~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:852:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:857:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |     ^~~~~~~
+../Core/Src/main.c:857:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:857:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |             ^~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:857:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:826:58: warning: '%.2f' directive writing between 3 and 313 bytes into a region of size 0 [-Wformat-overflow=]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                                                          ^~~~
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:826:5: note: 'sprintf' output between 75 and 1005 bytes into a destination of size 35
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:845:64: warning: 'Mean Accelerometer tridimens...' directive writing 43 bytes into a region of size 35 [-Wformat-overflow=]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+../Core/Src/main.c:845:7: note: 'sprintf' output between 86 and 1016 bytes into a destination of size 35
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:852:57: warning: 'Magnetometer tridimensional ...' directive writing 37 bytes into a region of size 35 [-Wformat-overflow=]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+../Core/Src/main.c:852:5: note: 'sprintf' output between 73 and 1003 bytes into a destination of size 35
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101804	    924	  25684	 128412	  1f59c	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+11:25:16 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:826:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:826:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:826:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:826:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:831:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:831:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:831:13: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |             ^~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t {aka unsigned char}
+../Core/Src/main.c:831:13: note: expected 'char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c:832:32: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  832 |     HAL_UART_Transmit(&huart3, MSG_LSM6DSL_Acc, sizeof(MSG_LSM6DSL_Acc), 100);
+      |                                ^~~~~~~~~~~~~~~
+      |                                |
+      |                                uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:836:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:836:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:836:13: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |             ^~~~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t {aka unsigned char}
+../Core/Src/main.c:836:13: note: expected 'char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c:837:32: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  837 |     HAL_UART_Transmit(&huart3, MSG_LSM303AGR_Acc, sizeof(MSG_LSM303AGR_Acc), 100);
+      |                                ^~~~~~~~~~~~~~~~~
+      |                                |
+      |                                uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:845:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~
+../Core/Src/main.c:845:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:845:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |               ^~~~~~~~~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:845:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:852:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:852:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:852:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |             ^~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:852:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:857:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |     ^~~~~~~
+../Core/Src/main.c:857:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:857:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |             ^~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:857:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:826:58: warning: '%.2f' directive writing between 3 and 313 bytes into a region of size 0 [-Wformat-overflow=]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                                                          ^~~~
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:826:22: note: assuming directive output of 4 bytes
+../Core/Src/main.c:826:5: note: 'sprintf' output between 75 and 1005 bytes into a destination of size 35
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:845:64: warning: 'Mean Accelerometer tridimens...' directive writing 43 bytes into a region of size 35 [-Wformat-overflow=]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+../Core/Src/main.c:845:28: note: assuming directive output of 4 bytes
+../Core/Src/main.c:845:7: note: 'sprintf' output between 86 and 1016 bytes into a destination of size 35
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:852:57: warning: 'Magnetometer tridimensional ...' directive writing 37 bytes into a region of size 35 [-Wformat-overflow=]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+../Core/Src/main.c:852:21: note: assuming directive output of 4 bytes
+../Core/Src/main.c:852:5: note: 'sprintf' output between 73 and 1003 bytes into a destination of size 35
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101804	    924	  25684	 128412	  1f59c	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+11:29:19 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101804	    924	  25684	 128412	  1f59c	drone.elf
+Finished building: default.size.stdout
+ 
+11:31:26 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:826:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:826:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:826:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:826:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:831:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:831:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:831:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |             ^~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:831:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:836:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:836:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:836:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |             ^~~~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:836:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:845:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~
+../Core/Src/main.c:845:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:845:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |               ^~~~~~~~~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:845:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:852:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:852:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:852:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |             ^~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:852:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:857:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |     ^~~~~~~
+../Core/Src/main.c:857:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:857:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |             ^~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:857:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+11:32:31 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
+16:27:02 **** Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
+19:29:20 **** Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
+22:43:29 **** Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lsm6dsl -I../Drivers/BSP/Components/lps22hb -I../Drivers/BSP/Components/lsm303agr -I../Drivers/BSP/Components/hts221 -I../Drivers/BSP/IKS01A2 -I../Drivers/BSP/Components/Common -I../X-CUBE-MEMS1/Target -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartPrintData':
+../Core/Src/main.c:826:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:826:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:33:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   32 | #include "iks01a2_motion_sensors.h"
+  +++ |+#include <stdio.h>
+   33 | #include <stdint.h>
+../Core/Src/main.c:826:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  826 |     sprintf(MSG_Gyro,"Gyroscope tridimensional data  x = %.2f,   y = %.2f,  z= %.2f in rad*sec^-1\r\n", VectGyro[0],VectGyro[1],VectGyro[2]);
+      |             ^~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:826:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:831:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:831:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:831:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  831 |     sprintf(MSG_LSM6DSL_Acc,"LSM6DSL Accelerometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f  in m*sec^-2\r\n", VectAcc_LSM6DSL[0],VectAcc_LSM6DSL[1],VectAcc_LSM6DSL[2]);
+      |             ^~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:831:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:836:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:836:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:836:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  836 |     sprintf(MSG_LSM303AGR_Acc,"LSM303AGR Accelerometer tridimensional data x = %.2f,    y = %.2f,     z = %.2f  in m*sec^-2\r\n", VectAcc_LSM303AGR[0],VectAcc_LSM303AGR[1],VectAcc_LSM303AGR[2]);
+      |             ^~~~~~~~~~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:836:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:845:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |       ^~~~~~~
+../Core/Src/main.c:845:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:845:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  845 |       sprintf(MSG_Mean_Acc,"Mean Accelerometer tridimensional data x = %.2f,   y = %.2f,     z = %.2f  in m*sec^-2\r\n", variable_append0, variable_append1, variable_append2);
+      |               ^~~~~~~~~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:845:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:852:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |     ^~~~~~~
+../Core/Src/main.c:852:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:852:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  852 |     sprintf(MSG_Mag,"Magnetometer tridimensional data x = %.2f,   y = %.2f,  z= %.2f in MicroT\r\n", VectMag[0],VectMag[1],VectMag[2]);
+      |             ^~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:852:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:857:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |     ^~~~~~~
+../Core/Src/main.c:857:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:857:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  857 |     sprintf(MSG_Press,"Barometer data  = %.1f in hPa\r\n\n", VectPress);
+      |             ^~~~~~~~~
+      |             |
+      |             uint8_t * {aka unsigned char *}
+../Core/Src/main.c:857:13: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+arm-none-eabi-gcc -o "drone.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Embedded\Workspace\ProgettoAggiornato\drone\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="drone.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: drone.elf
+ 
+arm-none-eabi-size   drone.elf 
+arm-none-eabi-objdump -h -S  drone.elf  > "drone.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
+Finished building: drone.list
+ 
+22:55:13 **** Incremental Build of configuration Debug for project drone ****
+make -j12 all 
+arm-none-eabi-size   drone.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101868	    924	  25684	 128476	  1f5dc	drone.elf
+Finished building: default.size.stdout
+ 
